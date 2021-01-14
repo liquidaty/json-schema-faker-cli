@@ -27,7 +27,7 @@ This repo is forked from https://github.com/oprogramador/json-schema-faker-cli t
 *  generate-json # outputs error message and usage message
 
 ### from stdin / to stdout, or with other options
-*  generate-json --alwaysFakeOptionals < my.schema.json > my-fake.json # saves to my-fake.json
-*  generate-json --notAValidOption my.schema.json # outputs error message and usage message
+*  generate-json --alwaysFakeOptionals - < my.schema.json > my-fake.json # saves to my-fake.json
+*  generate-json --notAValidOption --defaultRandExpMax=12 my.schema.json # outputs error message and usage message
 
 Options are described at https://github.com/json-schema-faker/json-schema-faker/tree/master/docs#available-options
