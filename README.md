@@ -8,7 +8,7 @@ This repo is forked from https://github.com/oprogramador/json-schema-faker-cli t
 
 ## install
 
-`npm install -g npm install liquidaty/json-schema-faker-cli`
+`npm install -g liquidaty/json-schema-faker-cli`
 
 ## usage
 
