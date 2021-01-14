@@ -1,13 +1,20 @@
 const _ = require('lodash');
 const jsonfile = require('jsonfile');
-const faker = require('json-schema-faker');
 
-function generate(inputPath, outputPath, itemsLength) {
+function generate(inputPath, outputPath, itemsLength, options) {
+  var faker = require('json-schema-faker');
   const inputObject = jsonfile.readFileSync(inputPath);
+  if(options)
+    faker.option(options);
+
   const output = itemsLength === undefined
     ? faker(inputObject)
     : _.times(itemsLength, () => faker(inputObject));
-  jsonfile.writeFileSync(outputPath, output);
+
+  if(!outputPath)
+    console.log(JSON.stringify(output));
+  else
+    jsonfile.writeFileSync(outputPath, output);
 }
 
 module.exports = generate;
