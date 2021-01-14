@@ -3,6 +3,10 @@ const jsonfile = require('jsonfile');
 
 function generate(inputPath, outputPath, itemsLength, options) {
   var faker = require('json-schema-faker');
+  
+  if(inputPath == '-') // for input, use stdin instead of file
+    inputPath = '/dev/stdin';
+
   const inputObject = jsonfile.readFileSync(inputPath);
   if(options)
     faker.option(options);
